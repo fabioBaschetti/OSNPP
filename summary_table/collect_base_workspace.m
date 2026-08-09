@@ -1,0 +1,19 @@
+function vars = collect_base_workspace()
+%COLLECT_BASE_WORKSPACE Pull relevant variables from MATLAB base workspace.
+
+    names = { ...
+        't_path','x1_path','x2_path','x3_path','z_path','S_path', ...
+        'ttau_','iota_','i0','T','dt','DELTA','x1_','x2_','x3_', ...
+        'P_min','P_max','P_min_IT','P_max_IT','P_max_EU', ...
+        'lambda1','lambda2','gamma1','delta','G','g','f', ...
+        's_res','s_npp','s_fss' ...
+    };
+
+    vars = struct();
+    for k = 1:numel(names)
+        nm = names{k};
+        if evalin('base', sprintf('exist(''%s'',''var'')', nm))
+            vars.(nm) = evalin('base', nm);
+        end
+    end
+end
