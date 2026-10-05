@@ -33,7 +33,7 @@
 ├── paths/                            store some simulated paths for the residual demand (both local and global)
                                       as needed for producing the Figures in the paper
 │
-├── summary_table/                    store all scripts genrating Table 1 in the paper
+├── summary_mc_experiments/           store all scripts generating Tables 1, 2, 3, and 4 in the paper
 │
 └── utils/                            auxiliary functions for solving the optimal switching problem, simulate a
                                       controlled diffusion and plot the results, both ...
@@ -43,16 +43,16 @@
 
 ## Running the Code
 
-To generate **Table 1**:
-
-```matlab
-results = run_summary_table;
-```
-
-To run individual experiments (with figures):
+To perform individual runs in the open/closed market (with figures):
 
 ```matlab
 main.m
+```
+
+To generate the **Summary Tables** from the Monte Carlo experiments:
+
+```matlab
+outputs = run_mc_experiments;
 ```
 
 ## Data
